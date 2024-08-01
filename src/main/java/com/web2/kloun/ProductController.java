@@ -37,28 +37,28 @@ public class ProductController {
     }
 
     @PostMapping("/armazenarProduto")
-    public String armazenarProduto(Model model, @RequestParam int id, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam String imagem) {
+    public String armazenarProduto(Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam String imagem) {
         Product saveProduct = new Product();
         saveProduct.setNome(nome);
         saveProduct.setDescricao(descricao);
         saveProduct.setPreco(preco);
         saveProduct.setCategoria(descricao);
         saveProduct.setImagem(imagem);
-
         productRepository.save(saveProduct);
         return "redirect:/produtos";
     }
 
     @GetMapping("/atualizarProduto")
-    public String atualizarProduto (Model model, @RequestParam ("id") int id){
+    public String atualizarProduto (Model model, @RequestParam int id){
         Product findProduct = productRepository.findById(id);
         model.addAttribute("prod", findProduct);
         return "atualizar_produto.html";
     }
 
     @PostMapping("/salvarAtualizacaoProduto")
-    public String salvarAtualizacaoProduto (Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam String imagem){
+    public String salvarAtualizacaoProduto (Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam String imagem, @RequestParam int id){
         Product updateProduct = new Product();
+        updateProduct.setId(id);
         updateProduct.setNome(nome);
         updateProduct.setDescricao(descricao);
         updateProduct.setPreco(preco);
