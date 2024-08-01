@@ -26,7 +26,7 @@
 
                     <div id="menu">
                         <ul id="lista-menu">
-                            <li class="menu-itens"><a href="templates/shop.html">shop</a></li>
+                            <li class="menu-itens"><a th:href="@{/shop}">shop</a></li>
                             <li class="menu-itens">arquivo</li>
                             <li class="menu-itens"><a href="sobre.html">sobre</a></li>
                         </ul>
@@ -75,7 +75,7 @@
         <div id="content-latest-drop">
             <div id="latest-drop-meio">
                 <p id="texto-drop"> DROP "STANZYCK"</p>
-                <a href="shop.html" id="link-drop"><button type="button" id="botao-drop"> COMPRE JÁ</button></a>
+                <a th:href="@{/shop}" id="link-drop"><button type="button" id="botao-drop"> COMPRE JÁ</button></a>
             </div>
         </div>
 

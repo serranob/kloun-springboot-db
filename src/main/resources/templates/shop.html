@@ -24,14 +24,14 @@
 
                     <div id="menu">
                         <ul id="lista-menu">
-                            <li class="menu-itens"><a href="shop.html">shop</a></li>
+                            <li class="menu-itens"><a th:href="@{/shop}">shop</a></li>
                             <li class="menu-itens">arquivo</li>
                             <li class="menu-itens"><a href="sobre.html">sobre</a></li>
                         </ul>
                     </div>
 
                     <div id="logo-header">
-                        <a href="index.html">
+                        <a th:href="@{/home}">
                             <img src="imagens/logo.png" alt="" id="imagem-logo-header">
                         </a>
                     </div>
@@ -104,9 +104,26 @@
 
 
             <div id="lista-produtos">
-                    <div class="product-block ">
-                    </div>
+    <div class="produtos-grid">
+        <!-- Loop para exibir cada produto -->
+        <div class="product-block" th:each="prod : ${productsList}">
+            <div class="image">
+                <a th:href="@{/detalhesProduto(id=${prod.id})}">
+                <img src="imagens/camiseta01.png"  alt="Imagem do Produto"><!--th:src="@{${prod.imagem}}"-->
+                </a>
             </div>
+            <div class="meta">
+                <h3 class="name">
+                    <a th:href="@{/detalhesProduto(id=${prod.id})}" th:text="${prod.nome}"></a>
+                </h3>
+                <p class="price" data-update-price="" th:text="${prod.preco}"></p>
+                <p class="parcels">
+                    CALCULAR PARCELAS COM JAVA
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
 
 

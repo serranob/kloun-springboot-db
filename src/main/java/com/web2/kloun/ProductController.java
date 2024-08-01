@@ -16,9 +16,22 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
+
+    @GetMapping("/home")
+    public String home () {
+        return "index.html";
+    }
+    
+    @GetMapping("/shop")
+    public String shop(Model model){
+        List<Product> productsList = productRepository.findAll();
+        model.addAttribute("productsList", productsList);
+        return "shop.html";
+    }
+    
+    
     @GetMapping("/produtos")
     public String listarProdutos(Model model){
-
         List<Product> productsList = productRepository.findAll();
         model.addAttribute("productsList", productsList);
         return "dashboard.html";
