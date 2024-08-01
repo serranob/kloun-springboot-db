@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    all: unset;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#site {
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+}
+
+#inner-container {
+    background-color: rgb(198, 22, 27);
+    color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 33.3%;
+}
+
+#lista-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu-itens {
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.menu-itens>a:hover {
+    cursor: pointer;
+}
+
+#logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3%;
+    font-weight: bold;
+}
+
+#logo-header>a:hover {
+    cursor: pointer;
+}
+
+#imagem-logo-header {
+    height: 80px;
+}
+
+#icones {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 33.3%;
+    background-color: transparent;
+}
+
+#input-pesquisa {
+    background-color: transparent;
+    border: 1px solid beige;
+    height: 20px;
+    width: 40%;
+    border-radius: 8px;
+    color: beige;
+}
+
+.icones-itens {
+    display: flex;
+}
+
+.icone-botao {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    height: 30px;
+}
+
+.link-search-login-carrinho {
+    width: 100%;
+    height: 100%;
+}
+
+.cor {
+    fill: beige;
+}
+
+#login {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+#icone-palhaco-container img {
+    height: 24px;
+}

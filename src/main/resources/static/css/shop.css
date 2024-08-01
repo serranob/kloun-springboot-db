@@ -1,0 +1,86 @@
+a:hover {
+    cursor: pointer;
+}
+
+#meio {
+    display: flex;
+    background-color: beige;
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    height: 800px;
+    width: 340px;
+}
+
+.filtro-produto {
+    font-weight: bold;
+    margin-top: 8px;
+    color: rgb(117, 14, 17);
+}
+
+.titulo-filtro {
+    margin-left: 8px;
+}
+
+#tamanhos-itens {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    justify-content: space-evenly;
+}
+
+.tamanho {
+    height: 32px;
+    width: 32px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(253, 105, 110);
+    color: beige;
+}
+
+#categorias-itens {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: transparent;
+    align-items: center;
+}
+
+.categoria {
+    font-size: 12px;
+    font-weight: bold;
+    height: 32px;
+    background-color: rgb(253, 105, 110);
+    border: none;
+    width: 240px;
+    margin: 8px 10px;
+    color: beige;
+}
+
+.product-line {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    color: rgb(117, 14, 17);
+}
+
+.product-block {
+    border: 6px solid beige;
+    width: 33%;
+    padding: 20px;
+}
+
+.product-block>div>a>img {
+    width: 100%;
+}

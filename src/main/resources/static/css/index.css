@@ -1,0 +1,59 @@
+#content-latest-drop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../imagens/stanczyk.jpg");
+    background-size: 2000px;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    height: 500px;
+}
+
+#latest-drop-meio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 3px solid white;
+    height: 55%;
+    width: 40%;
+    font-size: 18px;
+    color: white;
+}
+
+#link-drop{
+    width: 60%;
+    margin-top: 10px;
+}
+
+#botao-drop {
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+    padding: 7px;
+}
+
+#botao-drop:hover {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(198, 22, 27);
+}
+
+#galeria {
+    background-color:black;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.imagem-galeria {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}

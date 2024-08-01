@@ -1,0 +1,131 @@
+#meio {
+    background-color: beige;
+    width: 100%;
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding-bottom: 40px;
+}
+
+.titulo {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+#meu-pedido {
+    background-color: beige;
+    color: rgb(117, 14, 17);
+    width: 35%;
+    font-size: 18px;
+}
+
+#topo-descri {
+    display: flex;
+    font-weight: bold;
+    padding-bottom: 7px;
+}
+
+#descri-preco {
+    background: beige;
+    height: 50%;
+}
+
+.descri-preco-itens {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px dotted rgb(198, 22, 27);
+    padding: 10px 20px;
+}
+
+#endereco-entrega {
+    background-color: beige;
+    height: 50%;
+}
+
+.item-endereco {
+    margin: 0 20px 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.titulo-item {
+    font-weight: bold;
+    color: rgb(117, 14, 17);
+}
+
+#alterar-endereco {
+    display: block;
+    width: 163px;
+    font-size: 15px;
+    margin: 15px 0 0 20px;
+    text-decoration: underline;
+}
+
+#alterar-endereco:hover{
+    cursor: pointer;
+}
+
+#resumoepagamento {
+    background-color: beige;
+    color: rgb(117, 14, 17);
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#resumo-pedido {
+    background-color: rgba(223, 219, 184, 0.815);
+    width: 90%;
+    height: 45%;
+    font-size: 16px;
+}
+
+.item-resumo-pedido {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+
+#total-resumo-pedido {
+    border-top: 3px solid rgb(198, 22, 27);
+    padding: 15px 0px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+#forma-pagamento {
+    background-color: rgba(223, 219, 184, 0.815);
+    width: 90%;
+    height: 45%;
+    font-size: 18px;
+}
+
+#boleto-cartao-pix {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-pagamento {
+    margin: 4px 20px;
+}
+
+#finalizar-pedido {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#botao-finalizar-pedido {
+    width: 50%;
+    height: 50px;
+    border: none;
+    background-color: rgb(198, 22, 27);
+    color: beige;
+    font-size: 19px;
+}

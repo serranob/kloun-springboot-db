@@ -1,0 +1,74 @@
+#site {
+    background-color: beige;
+    color: rgb(117, 14, 17);
+}
+
+.titulo-sobre {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#sobre-texto {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin: 40px 0px 0px 0px;
+}
+
+#texto {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: justify;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+
+.ptexto {
+    margin-bottom: 24px;
+    text-indent: 20px;
+}
+
+.logo-rascunhos {
+    width: 20%;
+}
+
+#sobre-adicionais {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.adicional {
+    border: 3px solid rgb(198, 22, 27);
+    width: 26%;
+    line-height: 19px;
+    text-align: justify;
+    padding: 0px 20px 20px 20px;
+}
+
+#sobre-desenvolvimento {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: space-around;
+    text-align: justify;
+    margin-bottom: 80px;
+}
+
+.nome {
+    font-weight: bolder;
+}
+
+.desenvolvedor {
+    width: 44.5%;
+    display: flex;
+}
+
+.img-desenvolvedor {
+    margin-right: 5px;
+    height: 150px;
+}

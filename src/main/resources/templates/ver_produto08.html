@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ver.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+    <title>Item</title>
+</head>
+
+<body>
+    <div id="site">
+        <header>
+            <div id="container">
+                <div id="inner-container">
+
+                    <div id="menu">
+                        <ul id="lista-menu">
+                            <li class="menu-itens"><a href="shop.html">shop</a></li>
+                            <li class="menu-itens">arquiv</li>
+                            <li class="menu-itens"><a href="sobre.html">sobre</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="logo-header">
+                        <a href="index.html">
+                            <img src="imagens/logo.png" alt="" id="imagem-logo-header">
+                        </a>
+                    </div>
+
+                    <div id="icones">
+                        <input type="text" id="input-pesquisa">
+                        <div id="buscar" class="icones-itens">
+                            <button type="button" class="icone-botao">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+
+                                    <path class="cor"
+                                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="login" class="icones-itens">
+                            <a href="login_cadastro.html">
+                                <button type="button" class="icone-botao" id="icone-palhaco-container">
+                                    <img class="icone-palhaco" src="imagens/icone_palhaco01.png" alt="imagem default">
+                                </button>
+                            </a>
+                        </div>
+                        <div id="carrinho" class="icones-itens">
+                            <a href="carrinho.html">
+                                <button type="button" class="icone-botao">
+                                    <svg class="" xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                                        viewBox="0 0 576 512">
+                                        <path class="cor"
+                                            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="produto-content">
+            <div id="imagens">
+                <button>
+                    <img src="https://cdn.vnda.com.br/150x/classofficial/2023/09/12/18_37_33_131_18_9_9_936_still_class_2023_d3_00120.jpg?v=1694554665"
+                        alt="">
+                </button>
+                <button>
+                    <img src="https://cdn.vnda.com.br/150x/classofficial/2023/09/12/17_35_23_349_17_9_9_998_camiseta20class20inverso20rosa203.jpg?v=1694550923"
+                        alt="">
+                </button>
+                <button>
+                    <img src="https://cdn.vnda.com.br/150x/classofficial/2023/09/12/17_35_23_677_17_9_0_018_camiseta20class20inverso20rosa202.jpg?v=1694550923"
+                        alt="">
+                </button>
+            </div>
+            <div id="imagem-exibida">
+                <div id="seta-esquerda" class="seta">
+                    <button type="button" class="botao-seta">
+                        <p>
+                            &#60;
+                        </p>
+                    </button>
+                </div>
+                <img src="imagens/camiseta08.png"
+                    alt="" id="imagem-principal">
+                <div id="seta-direita" class="seta">
+                    <button type="button" class="botao-seta">
+                        <p>
+                            &#62;
+                        </p>
+                    </button>
+                </div>
+            </div>
+            <div id="sobre-produto">
+                <div>
+                    <p id="titulo-produto">T-SHIRT "BAILLERINA" CINZA</p>
+                </div>
+                <div>
+                    <p id="preco-produto">R$199,90  </p>
+                    <p id="parcela-produto"> ou 2x de  R$99,50</p>
+                </div>
+                <div>
+                    <ul id="info-produto">
+                        <li>100% algodão</li>
+                        <li>camiseta manga curta CINZA</li>
+                        <li>logo bordado em preto</li>
+                        <li>feito no Brasil</li>
+                    </ul>
+                </div>
+                <div id="tamanhos-produto">
+                    <p>TAMANHOS</p>
+                    <ul id="tamanhos-itens">
+                        <li><button type="button" class="tamanho">P</button></li>
+                        <li><button type="button" class="tamanho">M</button></li>
+                        <li><button type="button" class="tamanho">G</button></li>
+                        <li><button type="button" class="tamanho">GG</button></li>
+                        <li><button type="button" class="tamanho">XGG</button></li>
+                    </ul>
+                </div>
+                <div id="fim-produto">
+                    <div class="quantidade-produto">
+                        <button type="button" class="botao-quantidade"> - </button>
+                        <p class="texto-quantidade">1</p>
+                        <button type="button" class="botao-quantidade"> + </button>
+                    </div>
+                    <div id="comprar-produto">
+                        <button type="button" id="botao-comprar">comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer>
+            <div id="esquerda-footer">
+                <div id="newsletter">
+                    <p>newsletter</p>
+                    <div id="newsletter-box">
+                        <input type="email" name="" id="email-newsletter" placeholder="e-mail">
+                        <button type="button" id="email-button">
+                            &#62;
+                        </button>
+
+                    </div>
+                </div>
+
+                <div id="insta">
+                    <img id="icon-insta" src="" alt="">
+                    <a id="link-insta" href="a">@klaun</a>
+                </div>
+            </div>
+
+            <div id="logo-footer">
+                <img src="imagens/palhaco-logo.png" alt="" id="palhaco-logo">
+            </div>
+
+            <div id="direita-footer">
+                <div>
+                    <p class="endereco">BRASIL</p>
+                    <p class="endereco">Itapetininga / SP</p>
+                    <p class="endereco">Jardim Jardim</p>
+                    <p class="endereco">Rua Dr. José Doutor, 1384</p>
+                </div>
+
+                <div id="fale-conosco">
+                    <a href="">Fale conosco</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
