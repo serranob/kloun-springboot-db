@@ -81,5 +81,13 @@ public class ProductController {
         productRepository.update(updateProduct);
         return "redirect:/produtos";
     }
+
+    @GetMapping("/deletarProduto")
+    public String deletarProduto(@RequestParam ("id") int id) {
+        productRepository.delete(id);
+        return "redirect:/produtos";
+    }
+    
+
     
 }

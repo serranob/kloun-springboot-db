@@ -163,7 +163,7 @@
                     <p class="coluna-resto" th:text="${prod.preco}"></p>
                     <button type="button" class="editar-deletar" ><a th:href="@{/detalhesProduto(id=${prod.id})}">ver detalhes</a></button>
                     <button type="button" class="editar-deletar"> <a th:href="@{/atualizarProduto(id=${prod.id})}">editar</a></button>
-                    <button type="button" class="editar-deletar" th:href="@{/remover(id=${prod.id})}">deletar</button>
+                    <button type="button" class="editar-deletar"> <a th:href="@{/deletarProduto(id=${prod.id})}">deletar</a></button>
                 </div>
                 
             </div>

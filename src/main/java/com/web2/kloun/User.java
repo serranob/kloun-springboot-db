@@ -29,8 +29,8 @@ public class User {
     @Column(name = "sobrenome") 
     private String sobrenome;
 
-    @Column(name = "dataNascimento")
-    private String dataNascimento;
+    @Column(name = "nascimento")
+    private String nascimento;
 
     @Column(name = "celular")
     private String celular;
@@ -82,12 +82,12 @@ public class User {
         this.sobrenome = sobrenome;
     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
+    public String getNascimento() {
+        return nascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setNascimento(String nascimento) {
+        this.nascimento = nascimento;
     }
 
     public String getCelular() {

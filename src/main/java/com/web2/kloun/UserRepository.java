@@ -32,13 +32,13 @@ public class UserRepository {
 
     @Transactional
     public void save(User user) {
-        String sql = "INSERT INTO usuario (email, senha, nome, sobrenome, dataNascimento, celular, cpf) VALUES (:email, :senha, :nome, :sobrenome, :dataNascimento, :celular, :cpf)";
+        String sql = "INSERT INTO usuario (email, senha, nome, sobrenome, nascimento, celular, cpf) VALUES (:email, :senha, :nome, :sobrenome, :nascimento, :celular, :cpf)";
         Query query = em.createNativeQuery(sql);
         query.setParameter("email", user.getEmail());
         query.setParameter("senha", user.getSenha());
         query.setParameter("nome", user.getNome());
         query.setParameter("sobrenome", user.getSobrenome());
-        query.setParameter("dataNascimento", user.getDataNascimento());
+        query.setParameter("nascimento", user.getNascimento());
         query.setParameter("cpf", user.getCpf());
         query.setParameter("celular", user.getCelular());
         query.executeUpdate();
@@ -46,13 +46,13 @@ public class UserRepository {
 
     @Transactional
     public void update(User user) {
-        String sql = "UPDATE usuario SET email = :email, senha = :senha, nome = :nome, sobrenome = :sobrenome, dataNascimento = :dataNascimento, cpf =:cpf, celular = :celular WHERE id = :id";
+        String sql = "UPDATE usuario SET email = :email, senha = :senha, nome = :nome, sobrenome = :sobrenome, nascimento = :nascimento, cpf =:cpf, celular = :celular WHERE id = :id";
         Query query = em.createNativeQuery(sql);
         query.setParameter("email", user.getEmail());
         query.setParameter("senha", user.getSenha());
         query.setParameter("nome", user.getNome());
         query.setParameter("sobrenome", user.getSobrenome());
-        query.setParameter("dataNascimento", user.getDataNascimento());
+        query.setParameter("nascimento", user.getNascimento());
         query.setParameter("cpf", user.getCpf());
         query.setParameter("celular", user.getCelular());
         query.executeUpdate();
