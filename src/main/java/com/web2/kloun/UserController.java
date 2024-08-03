@@ -23,12 +23,12 @@ public class UserController {
         return "usuarios.html";
     }
 
-    // @GetMapping("/detalhesUsuario")
-    // public String detalhesUsuario (Model model, @RequestParam ("id") int id){
-    //     User findUser = userRepository.findById(id);
-    //     model.addAttribute("user", findUser);
-    //     return "ver_produto01.html";
-    // }
+    @GetMapping("/detalhesUsuario")
+    public String detalhesUsuario (Model model, @RequestParam ("id") int id){
+        User findUser = userRepository.findById(id);
+        model.addAttribute("user", findUser);
+        return "ver_usuario.html";
+    }
 
     @GetMapping("/cadastrarUsuario")
     public String cadastrarUsuario(){
@@ -49,29 +49,30 @@ public class UserController {
         return "redirect:/home";
     }
 
-    // @GetMapping("/atualizarUsuario")
-    // public String atualizarUsuario (Model model, @RequestParam int id){
-    //     User findUser = userRepository.findById(id);
-    //     model.addAttribute("user", findUser);
-    //     return "atualizar_usuario.html";
-    // }
+    @GetMapping("/atualizarUsuario")
+    public String atualizarUsuario (Model model, @RequestParam int id){
+        User findUser = userRepository.findById(id);
+        model.addAttribute("user", findUser);
+        return "atualizar_usuario.html";
+    }
 
-    // @PostMapping("/salvarAtualizacaoUsuario")
-    // public String salvarAtualizacaoUsuario (Model model, @RequestParam String email, @RequestParam String senha, @RequestParam String nome, @RequestParam String sobrenome, @RequestParam String nascimento, @RequestParam String cpf, @RequestParam String celular, @RequestParam int id){
-    //     User updateUser = new User();
-    //     updateUser.setEmail(email);
-    //     updateUser.setSenha(senha);
-    //     updateUser.setNome(nome);
-    //     updateUser.setSobrenome(sobrenome);
-    //     updateUser.setNascimento(nascimento);
-    //     updateUser.setCpf(cpf);
-    //     updateUser.setCelular(celular);
-    //     userRepository.update(updateUser);
-    //     return "redirect:/usuarios";
-    // }
-    // @GetMapping("/deletarUsuario")
-    // public String deletarUsuario(@RequestParam ("id") int id) {
-    //     userRepository.delete(id);
-    //     return "redirect:/usuarios";
-    // }
+    @PostMapping("/salvarAtualizacaoUsuario")
+    public String salvarAtualizacaoUsuario (Model model, @RequestParam String email, @RequestParam String senha, @RequestParam String nome, @RequestParam String sobrenome, @RequestParam String nascimento, @RequestParam String cpf, @RequestParam String celular, @RequestParam int id){
+        User updateUser = new User();
+        updateUser.setId(id);
+        updateUser.setEmail(email);
+        updateUser.setSenha(senha);
+        updateUser.setNome(nome);
+        updateUser.setSobrenome(sobrenome);
+        updateUser.setNascimento(nascimento);
+        updateUser.setCpf(cpf);
+        updateUser.setCelular(celular);
+        userRepository.update(updateUser);
+        return "redirect:/usuarios";
+    }
+    @GetMapping("/deletarUsuario")
+    public String deletarUsuario(@RequestParam ("id") int id) {
+        userRepository.delete(id);
+        return "redirect:/usuarios";
+    }
 }

@@ -48,6 +48,7 @@ public class UserRepository {
     public void update(User user) {
         String sql = "UPDATE usuario SET email = :email, senha = :senha, nome = :nome, sobrenome = :sobrenome, nascimento = :nascimento, cpf =:cpf, celular = :celular WHERE id = :id";
         Query query = em.createNativeQuery(sql);
+        query.setParameter("id", user.getId());
         query.setParameter("email", user.getEmail());
         query.setParameter("senha", user.getSenha());
         query.setParameter("nome", user.getNome());

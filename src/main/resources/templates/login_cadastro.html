@@ -24,14 +24,14 @@
 
                     <div id="menu">
                         <ul id="lista-menu">
-                            <li class="menu-itens"><a href="shop.html">shop</a></li>
+                            <li class="menu-itens"><a th:href="@{/shop}">shop</a></li>
                             <li class="menu-itens">arquivo</li>
                             <li class="menu-itens"><a href="sobre.html">sobre</a></li>
                         </ul>
                     </div>
 
                     <div id="logo-header">
-                        <a href="index.html">
+                        <a th:href="@{/home}">
                             <img src="imagens/logo.png" alt="" id="imagem-logo-header">
                         </a>
                     </div>
@@ -48,7 +48,7 @@
                             </button>
                         </div>
                         <div id="login" class="icones-itens">
-                            <a href="login_cadastro.html">
+                            <a th:href="@{/cadastrarUsuario}">
                                 <button type="button" class="icone-botao" id="icone-palhaco-container">
                                     <img class="icone-palhaco" src="imagens/icone_palhaco01.png" alt="imagem default">
                                 </button>
@@ -135,14 +135,6 @@
                         </div>
                         <div class="item-login-cadastro"> <label for="cpf">CPF:</label>
                             <input type="number" th:name="cpf" id="cpf" class="input-botao">
-                        </div>
-                        <div class="item-login-cadastro"> <label for="sexo">Sexo:</label>
-                            <div id="sexo">
-                                <label for="masculino">Masculino</label>
-                                <input type="radio" id="masculino" name="genero">
-                                <label for="feminino">Feminino</label>
-                                <input type="radio" id="feminino" name="genero">
-                            </div>
                         </div>
                         <div class="item-login-cadastro"><button type="submit" class="input-botao">REGISTRAR</button>
                         </div>
