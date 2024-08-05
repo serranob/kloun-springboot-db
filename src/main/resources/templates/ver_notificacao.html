@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{css/pico.min.css}">
+</head>
+<body>
+    <div class="container">
+        <h2>User</h2>
+        <p>Tipo: <span th:text="${notificacao.tipo}"></span></p>
+        <p>Prioridade: <span th:text="${notificacao.prioridade}"></span></p>
+        <p>Mensagem: <span th:text="${notificacao.mensagem}"></span></p>
+        <p>Data de Criação: <span th:text="${notificacao.criacao}"></span></p>
+    </div>
+</body>
+</html>
