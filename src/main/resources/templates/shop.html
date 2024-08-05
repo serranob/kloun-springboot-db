@@ -109,8 +109,8 @@
         <div class="product-block" th:each="prod : ${productsList}">
             <div class="image">
                 <a th:href="@{/detalhesProduto(id=${prod.id})}">
-                <img src="imagens/camiseta01.png"  alt="Imagem do Produto"><!--th:src="@{${prod.imagem}}"-->
-                </a>
+                    <img th:src="@{/public/} + ${prod.imagem}"
+                    alt="" class="imagem-produto">                </a>
             </div>
             <div class="meta">
                 <h3 class="name">

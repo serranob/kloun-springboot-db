@@ -126,7 +126,7 @@
                     <p class="titulo-nav">Alteração</p>
                     <ul class="itens-alt-rel">
                         <li><a href="cadastrar_produto.html" class="link-alteracao-relatorio">Novo produto</a></li>
-                        <li><a href="dashboard.html" class="link-alteracao-relatorio">Produtos cadastrados</a></li>
+                        <li><a th:href="@{/produtos}" class="link-alteracao-relatorio">Produtos cadastrados</a></li>
                     </ul>
                 </div>
 
@@ -143,7 +143,7 @@
 
             <div id="cadastrar-produto">
                 <p class="titulo-cadastro">Cadastrar novo produto</p>
-                <form th:action="@{/salvarAtualizacaoProduto}" th:method="post">
+                <form th:action="@{/salvarAtualizacaoProduto}" th:method="post" enctype="multipart/form-data">
                     <input type="hidden" th:name="id" th:value="${prod.id}">
                     <div class="item-cadastro">
                         <label for="Nome">Nome</label>

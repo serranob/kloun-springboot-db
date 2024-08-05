@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -15,6 +16,9 @@ public class ProductController {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private FileStorageService fileStorageService;
 
 
     @GetMapping("/home")
@@ -50,13 +54,16 @@ public class ProductController {
     }
 
     @PostMapping("/armazenarProduto")
-    public String armazenarProduto(Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam String imagem) {
+    public String armazenarProduto(Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam MultipartFile imagem) {
         Product saveProduct = new Product();
+        if(!imagem.isEmpty()) {
+            String imageName = fileStorageService.store(imagem);
+            saveProduct.setImagem(imageName);
+        }
         saveProduct.setNome(nome);
         saveProduct.setDescricao(descricao);
         saveProduct.setPreco(preco);
         saveProduct.setCategoria(descricao);
-        saveProduct.setImagem(imagem);
         productRepository.save(saveProduct);
         return "redirect:/produtos";
     }
@@ -69,14 +76,17 @@ public class ProductController {
     }
 
     @PostMapping("/salvarAtualizacaoProduto")
-    public String salvarAtualizacaoProduto (Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam String imagem, @RequestParam int id){
+    public String salvarAtualizacaoProduto (Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam MultipartFile imagem, @RequestParam int id){
         Product updateProduct = new Product();
+        if(!imagem.isEmpty()) {
+            String imageName = fileStorageService.store(imagem);
+            updateProduct.setImagem(imageName);
+        }
         updateProduct.setId(id);
         updateProduct.setNome(nome);
         updateProduct.setDescricao(descricao);
         updateProduct.setPreco(preco);
         updateProduct.setCategoria(categoria);
-        updateProduct.setImagem(imagem);
 
         productRepository.update(updateProduct);
         return "redirect:/produtos";

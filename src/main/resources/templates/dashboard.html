@@ -38,16 +38,19 @@
                     </div>
 
                     <div id="icones">
-                        <input type="text" id="input-pesquisa">
-                        <div id="buscar" class="icones-itens">
-                            <button type="button" class="icone-botao">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                        <form action="">
+                            <input type="text" id="input-pesquisa">
+                            <div id="buscar" class="icones-itens">
+                                <button type="button" class="icone-botao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
 
                                     <path class="cor"
                                         d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-                                </svg>
-                            </button>
-                        </div>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                        
                         <div id="login" class="icones-itens">
                             <a th:href="@{/cadastrarUsuario}">
                                 <button type="button" class="icone-botao" id="icone-palhaco-container">
@@ -128,7 +131,7 @@
                     <p class="titulo-nav">Alteração</p>
                     <ul class="itens-alt-rel">
                         <li><a th:href="@{/cadastrarProduto}" class="link-alteracao-relatorio">Novo produto</a></li>
-                        <li><a href="dashboard.html" class="link-alteracao-relatorio">Produtos cadastrados</a></li>
+                        <li><a th:href="@{/produtos}" class="link-alteracao-relatorio">Produtos cadastrados</a></li>
                     </ul>
                 </div>
 
@@ -152,7 +155,7 @@
                 </div>
                 <div id="linha1" class="linha" th:each="prod : ${productsList}">
                     <div class="coluna-produto">
-                        <img src="imagens/camiseta01.png"
+                        <img th:src="@{/public/} + ${prod.imagem}"
                             alt="" class="imagem-produto">
                         <div>
                             <p class="produto-nome" th:text="${prod.categoria}"></p>
