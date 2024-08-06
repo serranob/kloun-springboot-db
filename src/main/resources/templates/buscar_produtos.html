@@ -45,7 +45,6 @@
                                 </svg>
                             </button>
                         </form>
-                        
                         <div id="login" class="icones-itens">
                             <a th:href="@{/cadastrarUsuario}">
                                 <button type="button" class="icone-botao" id="icone-palhaco-container">
@@ -105,7 +104,7 @@
             <div id="lista-produtos">
     <div class="produtos-grid">
         <!-- Loop para exibir cada produto -->
-        <div class="product-block" th:each="prod : ${productsList}">
+        <div class="product-block" th:each="prod : ${produtos}">
             <div class="image">
                 <a th:href="@{/detalhesProduto(id=${prod.id})}">
                     <img th:src="@{/public/} + ${prod.imagem}"

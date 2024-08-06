@@ -37,16 +37,14 @@
                     </div>
 
                     <div id="icones">
-                        <input type="text" id="input-pesquisa">
-                        <div id="buscar" class="icones-itens">
-                            <button type="button" class="icone-botao">
+                        <form class="search-form" th:action="@{/buscarProdutos}" th:method="POST">
+                            <input type="text" id="input-pesquisa" name="nome" class="search-input" placeholder="Buscar produtos...">
+                            <button type="submit" class="search-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
-
-                                    <path class="cor"
-                                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                                    <path class="icon-path" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
                                 </svg>
                             </button>
-                        </div>
+                        </form>
                         <div id="login" class="icones-itens">
                             <a th:href="@{/cadastrarUsuario}">
                                 <button type="button" class="icone-botao" id="icone-palhaco-container">
@@ -75,39 +73,6 @@
 
             <div id="area-cliente">
                 <div id="logar" class="bloco">
-                    <form action="">
-                        <div>
-                            <p id="ja-cadastrado">Já é Cadastrado?</p>
-                            <p id="entre-com-dados">Entre com seus dados</p>
-                        </div>
-                        <div class="item-login-cadastro">
-                            <label for="email-login">E-mail:</label>
-                            <input type="email" id="email-login" class="input-botao">
-                        </div>
-                        <div class="item-login-cadastro">
-                            <label for="password-login"> Senha:</label>
-                            <input type="password" id="password-login" class="input-botao">
-                        </div>
-                        <div class="item-login-cadastro">
-                            <p><a href="a" id="esqueceu-login">esqueceu a senha?</a></p>
-                        </div>
-                        <div class="item-login-cadastro">
-                            <button type="button" class="input-botao">ENTRAR</button>
-                        </div>
-                        <div class="item-login-cadastro">
-                            <button type="button" class="input-botao" id="botao-google-login">
-                                <img class="logo-rede-social" src="imagens/Google__G__Logo.svg.webp" alt="">Entrar com
-                                Google
-                            </button>
-                        </div>
-                        <div class="item-login-cadastro">
-                            <button type="button" class="input-botao" id="botao-facebook-login">
-                                <img class="logo-rede-social"
-                                    src="imagens/facebook-logo-blue-circle-large-transparent-png.png" alt="">Entrar com
-                                Facebook
-                            </button>
-                        </div>
-                    </form>
                 </div>
                 <div id="cadastrar" class="bloco">
                     <form th:method="POST" th:action="@{/armazenarUsuario}">

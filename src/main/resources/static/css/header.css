@@ -111,3 +111,33 @@ button:hover {
 #icone-palhaco-container img {
     height: 24px;
 }
+
+/* Classe para o formulário */
+.search-form {
+    display: flex; /* Usa flexbox para alinhar os itens lado a lado */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    gap: 10px; /* Espaçamento entre o campo de texto e o botão */
+}
+
+/* Classe para o campo de texto */
+.search-input {
+    flex: 1; /* Faz o campo de texto ocupar o máximo de espaço disponível */
+    padding: 8px; /* Adiciona algum preenchimento interno */
+    border: 1px solid #ccc; /* Adiciona uma borda ao campo de texto */
+    border-radius: 4px; /* Adiciona bordas arredondadas */
+}
+
+/* Classe para o botão */
+.search-button {
+    background: none; /* Remove o fundo do botão */
+    border: none; /* Remove a borda do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    padding: 0; /* Remove o padding padrão do botão */
+    display: flex; /* Usa flexbox para centralizar o SVG dentro do botão */
+    align-items: center; /* Alinha verticalmente o SVG no centro */
+}
+
+/* Classe para o ícone dentro do botão */
+.icon-path {
+    fill: beige; /* Cor do ícone, ajuste conforme necessário */
+}

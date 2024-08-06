@@ -29,6 +29,14 @@ public class ProductRepository {
         Product product = (Product) q.getSingleResult();
         return product;
     }
+    
+    public List<Product> findByName(String nome){
+        String sql ="SELECT * FROM produto WHERE nome LIKE :search ";
+        Query q = em.createNativeQuery(sql, Product.class);
+        q.setParameter("search", "%" + nome + "%");
+        List<Product> products = q.getResultList();
+        return products;
+    }
 
     @Transactional
     public void save(Product product) {
