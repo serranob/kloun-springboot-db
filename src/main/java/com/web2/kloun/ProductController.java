@@ -65,7 +65,7 @@ public class ProductController {
         saveProduct.setNome(nome);
         saveProduct.setDescricao(descricao);
         saveProduct.setPreco(preco);
-        saveProduct.setCategoria(descricao);
+        saveProduct.setCategoria(categoria);
         productRepository.save(saveProduct);
         return "redirect:/produtos";
     }
