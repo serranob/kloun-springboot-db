@@ -45,8 +45,15 @@ public class UserController {
         saveUser.setNascimento(nascimento);
         saveUser.setCpf(cpf);
         saveUser.setCelular(celular);
-        userRepository.save(saveUser);
-        return "redirect:/home";
+        if (saveUser.isAdult()) {
+            userRepository.save(saveUser);
+            return "redirect:/home";
+        } else{
+            String erro = "O usuário deve ter 18 anos ou mais";
+            model.addAttribute("erro", erro);
+            return "erro.html";
+        }
+
     }
 
     @GetMapping("/atualizarUsuario")

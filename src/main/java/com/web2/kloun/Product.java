@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "produto")
-public class Product {
+public class Product extends Item implements ProductValores{
 
 
     @Id
@@ -91,7 +91,32 @@ public class Product {
         this.imagem = imagem;
     }
 
-    public double calcularParcela(int nparcelas){
-        return 0.0;
-    }   
+    public void aplicarDesconto (int percentualDesconto) {
+        this.preco = preco-((preco)*(percentualDesconto/100));
+    }
+    public void calcularParcelas(int parcelas) {
+        this.preco = (preco/parcelas);
+    }
+
+     // Sobrecarga 1: Aplica aumento percentual no preço
+    public void aumentarPreco(double percentualAumento) {
+        this.preco += this.preco * (percentualAumento / 100);
+    }
+
+    // Sobrecarga 2: Aplica aumento absoluto no preço
+    public void aumentarPreco(double valorAumento, boolean aumentoAbsoluto) {
+        if (aumentoAbsoluto) {
+            this.preco += valorAumento;
+        } else {
+            aumentarPreco(valorAumento); // Usa o método de aumento percentual
+        }
+    }
+
+    public double calcularValorTotal(int quantidade) {
+        if (quantidade < 0) {
+            throw new IllegalArgumentException("A quantidade não pode ser negativa.");
+        }
+        return preco * quantidade;
+    }
+  
 }

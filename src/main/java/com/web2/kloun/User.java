@@ -1,5 +1,8 @@
 package com.web2.kloun;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-public class User {
+public class User extends Pessoa {
 
 
     @Id
@@ -104,6 +107,19 @@ public class User {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+
+    @Override
+    public boolean isAdult() {
+        // Converte a string de nascimento para um objeto LocalDate
+        LocalDate dataNascimento = LocalDate.parse(nascimento);
+        // Obtém a data atual
+        LocalDate hoje = LocalDate.now();
+        // Calcula a diferença entre a data atual e a data de nascimento
+        int idade = Period.between(dataNascimento, hoje).getYears();
+        // Verifica se a idade é maior ou igual a 18
+        return idade >= 18;
     }
 
 }
