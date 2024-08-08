@@ -158,7 +158,7 @@
                     <div class="item-cadastro">
                         <label for="preco">Preço</label>
                         <br>
-                        <input type="number" id="preco" th:name="preco" th:value="${prod.preco}">
+                        <input type="number" id="preco" th:name="preco" th:value="${prod.preco}" step="0.01">
                     </div>
                     <div class="item-cadastro">
                         <label for="ficha-tecnica">Ficha Técnica</label>
@@ -170,15 +170,15 @@
                         <br>
                         <select id="selecione" th:name="categoria" th:value="${prod.nome}">
                             <option value="">Selecione</option>
-                            <option value="camiseta">Camisetas</option>
-                            <option value="bermudaShort">Bermudas e Shorts</option>
-                            <option value="calca">Calças</option>
-                            <option value="calcado">Calçados</option>
-                            <option value="jaquetaMoletom">Jaquetas e Moletons</option>
-                            <option value="acessorio">Acessórios</option>
-                            <option value="boneChape">Bonés e Chapéus</option>
-                            <option value="mochilaBolsa">Mochilas e Bolsas</option>
-                            <option value="Joia">Jóias</option>
+                            <option value="Camisetas">Camisetas</option>
+                            <option value="Bermudas e Shorts">Bermudas e Shorts</option>
+                            <option value="Calças">Calças</option>
+                            <option value="Calçados">Calçados</option>
+                            <option value="Jaquetas e Moletons">Jaquetas e Moletons</option>
+                            <option value="Acessórios">Acessórios</option>
+                            <option value="Bonés e Chapéus">Bonés e Chapéus</option>
+                            <option value="Mochilas e Bolsas">Mochilas e Bolsas</option>
+                            <option value="Jóias">Jóias</option>
 
                         </select>
                     </div>

@@ -1,5 +1,10 @@
 package com.web2.kloun;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -91,12 +96,23 @@ public class Product extends Item implements ProductValores{
         this.imagem = imagem;
     }
 
-    public void aplicarDesconto (int percentualDesconto) {
-        this.preco = preco-((preco)*(percentualDesconto/100));
+    @Override
+    public double formatarValor(double valor) {
+        BigDecimal bd = new BigDecimal(valor).setScale(2, RoundingMode.UP);
+        return bd.doubleValue();
     }
-    public void calcularParcelas(int parcelas) {
-        this.preco = (preco/parcelas);
+
+    public double aplicarDesconto (double percentualDesconto) {
+        double desconto = preco * (percentualDesconto / 100.0);
+        double precoComDesconto = getPreco() - desconto;
+        return formatarValor(precoComDesconto);
     }
+
+    public String calcularParcelas(int parcelas) {
+        double valorParcelado = (preco/parcelas);
+        return "ou " + parcelas + "x de R$" + String.format("%.2f", valorParcelado);
+    }
+
 
      // Sobrecarga 1: Aplica aumento percentual no preço
     public void aumentarPreco(double percentualAumento) {
@@ -112,11 +128,5 @@ public class Product extends Item implements ProductValores{
         }
     }
 
-    public double calcularValorTotal(int quantidade) {
-        if (quantidade < 0) {
-            throw new IllegalArgumentException("A quantidade não pode ser negativa.");
-        }
-        return preco * quantidade;
-    }
-  
+
 }

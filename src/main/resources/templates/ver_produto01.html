@@ -23,7 +23,7 @@
 
                     <div id="menu">
                         <ul id="lista-menu">
-                            <li class="menu-itens"><a href="shop.html">shop</a></li>
+                            <li class="menu-itens"><a th:href="@{/shop}">shop</a></li>
                             <li class="menu-itens">arquivo</li>
                             <li class="menu-itens"><a href="sobre.html">sobre</a></li>
                         </ul>
@@ -106,9 +106,10 @@
                     <p id="titulo-produto" th:text="${prod.nome}"></p>
                 </div>
                 <div>
-                    <p id="preco-produto" th:text="${prod.preco}"></p>
-                    <p id="parcela-produto"> FAZER CALCULO NA HORA COM FUNCAO JAVA</p>
-                </div>
+                    <p id="preco-produto" th:utext="'<s>' + 'R$ ' + ${prod.preco} + '</s>'"></p>
+                    <p id="preco-produto" th:text="'R$ ' + ${prod.aplicarDesconto(10)}"></p>
+                    <p id="parcela-produto"  th:text="${prod.calcularParcelas(2)}">
+                    </div>
                 <div>
                     <ul id="info-produto">
                         <li th:text="${prod.descricao}"></li>
