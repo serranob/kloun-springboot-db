@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Usuários</title>
-    <link rel="stylesheet" th:href="@{css/pico.min.css}">
-    <link rel="stylesheet" th:href="@{css/teste.css}">
-</head>
-<body>
+    <link rel="stylesheet" th:href="@{css/pico.min.css}" />
+    <link rel="stylesheet" th:href="@{css/teste.css}" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Gerenciar usuários</h1>
-        <a th:href="@{/cadastrarUsuario}"><strong>Cadastrar novo usuário</strong> </a>
-        <br>
-        <br>
-        <table class="striped">
-            <thead>
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">CPF</th>
-                    <th>Detalhes</th>
-                    <th>Atualizar</th>
-                    <th>Remover</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="user : ${usersList}">
-                    <th scope="row" th:text="${user.nome}"></th>
-                    <td th:text="${user.email}"></td>
-                    <td th:text="${user.cpf}"></td>
-                    <td><a th:href="@{/detalhesUsuario(id=${user.id})}">Ver Detalhes</a></td>
-                    <td><a th:href="@{/atualizarUsuario(id=${user.id})}">Atualizar</a></td>
-                    <td><a th:href="@{/deletarUsuario(id=${user.id})}">Remover</a></td>
-                </tr>
-            </tbody>
-        </table>
+      <h1>Gerenciar usuários</h1>
+      <a th:href="@{/cadastrarUsuario}"
+        ><strong>Cadastrar novo usuário</strong>
+      </a>
+      <br />
+      <br />
+      <table class="striped">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">CPF</th>
+            <th>Detalhes</th>
+            <th>Atualizar</th>
+            <th>Remover</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="user : ${usersList}">
+            <th scope="row" th:text="${user.nome}"></th>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.cpf}"></td>
+            <td>
+              <a th:href="@{/detalhesUsuario(id=${user.id})}">Ver Detalhes</a>
+            </td>
+            <td>
+              <a th:href="@{/atualizarUsuario(id=${user.id})}">Atualizar</a>
+            </td>
+            <td><a th:href="@{/deletarUsuario(id=${user.id})}">Remover</a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</body>
+  </body>
 </html>

@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" th:href="@{css/pico.min.css}">
-    <link rel="stylesheet" th:href="@{css/teste.css}">
-</head>
-<body>
+    <link rel="stylesheet" th:href="@{css/pico.min.css}" />
+    <link rel="stylesheet" th:href="@{css/teste.css}" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Atualizar Usuários</h1>
-        <form th:action="@{/salvarAtualizacaoUsuario}" th:method="post">
-            <input type="hidden" th:name="id" th:value="${user.id}">
-            <br>
-            <label for="email">Email:</label>
-            <input type="text" th:name="email" th:value="${user.email}">
+      <h1>Atualizar Usuários</h1>
+      <form th:action="@{/salvarAtualizacaoUsuario}" th:method="post">
+        <input type="hidden" th:name="id" th:value="${user.id}" />
+        <br />
+        <label for="email">Email:</label>
+        <input type="text" th:name="email" th:value="${user.email}" />
 
-            <label for="senha">Senha:</label>
-            <input type="text" th:name="senha" th:value="${user.senha}">
+        <label for="senha">Senha:</label>
+        <input type="text" th:name="senha" th:value="${user.senha}" />
 
-            <label for="nome">Nome:</label>
-            <input type="text" th:name="nome" th:value="${user.nome}" readonly>
+        <label for="nome">Nome:</label>
+        <input type="text" th:name="nome" th:value="${user.nome}" readonly />
 
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text" th:name="sobrenome" th:value="${user.sobrenome}" readonly> 
+        <label for="sobrenome">Sobrenome:</label>
+        <input
+          type="text"
+          th:name="sobrenome"
+          th:value="${user.sobrenome}"
+          readonly
+        />
 
-            <label for="nascimento">Nascimento:</label>
-            <input type="text" th:name="nascimento" th:value="${user.nascimento}" readonly>
+        <label for="nascimento">Nascimento:</label>
+        <input
+          type="text"
+          th:name="nascimento"
+          th:value="${user.nascimento}"
+          readonly
+        />
 
-            <label for="cpf">CPF:</label>
-            <input type="text" th:name="cpf" th:value="${user.cpf}" readonly>
+        <label for="cpf">CPF:</label>
+        <input type="text" th:name="cpf" th:value="${user.cpf}" readonly />
 
-            <label for="celular">Celular:</label>
-            <input type="text" th:name="celular" th:value="${user.celular}">
+        <label for="celular">Celular:</label>
+        <input type="text" th:name="celular" th:value="${user.celular}" />
 
-            
-            <button type="submit">Atualizar</button>
-        </form>
+        <button type="submit">Atualizar</button>
+      </form>
     </div>
-</body>
+  </body>
 </html>

@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" th:href="@{css/pico.min.css}">
-    <link rel="stylesheet" th:href="@{css/teste.css}">
-
-</head>
-<body>
+    <link rel="stylesheet" th:href="@{css/pico.min.css}" />
+    <link rel="stylesheet" th:href="@{css/teste.css}" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Atualizar Notificações</h1>
-        <form th:action="@{/salvarAtualizacaoNotificacao}" th:method="post">
-            <input type="hidden" th:name="id" th:value="${notificacao.id}">
-            <br>
-            <label for="tipo">Tipo de Notificação</label>
-            <select th:name="tipo" id="selecione" th:value="${notificacao.tipo}">
-                <option value="">Selecione</option>
-                <option value="Novidades">Novidades</option>
-                <option value="Promoções">Promoções</option>
-                <option value="Melhorias">Melhorias</option>
-                <option value="Alerta">Alerta</option>
-                <option value="Eventos">Eventos</option>
-            </select>   
+      <h1>Atualizar Notificações</h1>
+      <form th:action="@{/salvarAtualizacaoNotificacao}" th:method="post">
+        <input type="hidden" th:name="id" th:value="${notificacao.id}" />
+        <br />
+        <label for="tipo">Tipo de Notificação</label>
+        <select th:name="tipo" id="selecione" th:value="${notificacao.tipo}">
+          <option value="">Selecione</option>
+          <option value="Novidades">Novidades</option>
+          <option value="Promoções">Promoções</option>
+          <option value="Melhorias">Melhorias</option>
+          <option value="Alerta">Alerta</option>
+          <option value="Eventos">Eventos</option>
+        </select>
 
-            <label for="prioridade">Nível de Prioridade</label>
-            <select th:name="prioridade" id="selecione" th:value="${notificacao.prioridade}">
-                <option value="">Selecione</option>
-                <option value="Alta">Alta</option>
-                <option value="Média">Média</option>
-                <option value="Baixa">Baixa</option>
-            </select> 
+        <label for="prioridade">Nível de Prioridade</label>
+        <select
+          th:name="prioridade"
+          id="selecione"
+          th:value="${notificacao.prioridade}"
+        >
+          <option value="">Selecione</option>
+          <option value="Alta">Alta</option>
+          <option value="Média">Média</option>
+          <option value="Baixa">Baixa</option>
+        </select>
 
-            <label for="mensagem">Mensagem:</label>
-            <input type="text" th:name="mensagem" th:value="${notificacao.mensagem}" readonly>
+        <label for="mensagem">Mensagem:</label>
+        <input
+          type="text"
+          th:name="mensagem"
+          th:value="${notificacao.mensagem}"
+          readonly
+        />
 
-            <label for="criacao">Data de Criação:</label>
-            <input type="date" th:name="criacao" th:value="${notificacao.criacao}" readonly> 
+        <label for="criacao">Data de Criação:</label>
+        <input
+          type="date"
+          th:name="criacao"
+          th:value="${notificacao.criacao}"
+          readonly
+        />
 
-            
-            <button type="submit">Atualizar</button>
-        </form>
+        <button type="submit">Atualizar</button>
+      </form>
     </div>
-</body>
+  </body>
 </html>

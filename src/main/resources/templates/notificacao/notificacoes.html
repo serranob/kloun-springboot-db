@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Usuários</title>
-    <link rel="stylesheet" th:href="@{css/pico.min.css}">
-    <link rel="stylesheet" th:href="@{css/teste.css}">
-</head>
-<body>
+    <link rel="stylesheet" th:href="@{css/pico.min.css}" />
+    <link rel="stylesheet" th:href="@{css/teste.css}" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Gerenciar notificações</h1>
-        <a th:href="@{/cadastrarNotificacao}"><strong>Cadastrar nova notificação</strong> </a>
-        <br>
-        <br>
-        <table class="striped">
-            <thead>
-                <tr>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Prioridade</th>
-                    <th scope="col">Mensagem</th>
-                    <th>Detalhes</th>
-                    <th>Atualizar</th>
-                    <th>Remover</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="notif : ${notificacoesList}">
-                    <th scope="row" th:text="${notif.tipo}"></th>
-                    <td th:text="${notif.prioridade}"></td>
-                    <td th:text="${notif.mensagem}"></td>
-                    <td><a th:href="@{/detalhesNotificacao(id=${notif.id})}">Ver Detalhes</a></td>
-                    <td><a th:href="@{/atualizarNotificacao(id=${notif.id})}">Atualizar</a></td>
-                    <td><a th:href="@{/deletarNotificacao(id=${notif.id})}">Remover</a></td>
-                </tr>
-            </tbody>
-        </table>
+      <h1>Gerenciar notificações</h1>
+      <a th:href="@{/cadastrarNotificacao}"
+        ><strong>Cadastrar nova notificação</strong>
+      </a>
+      <br />
+      <br />
+      <table class="striped">
+        <thead>
+          <tr>
+            <th scope="col">Tipo</th>
+            <th scope="col">Prioridade</th>
+            <th scope="col">Mensagem</th>
+            <th>Detalhes</th>
+            <th>Atualizar</th>
+            <th>Remover</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="notif : ${notificacoesList}">
+            <th scope="row" th:text="${notif.tipo}"></th>
+            <td th:text="${notif.prioridade}"></td>
+            <td th:text="${notif.mensagem}"></td>
+            <td>
+              <a th:href="@{/detalhesNotificacao(id=${notif.id})}"
+                >Ver Detalhes</a
+              >
+            </td>
+            <td>
+              <a th:href="@{/atualizarNotificacao(id=${notif.id})}"
+                >Atualizar</a
+              >
+            </td>
+            <td>
+              <a th:href="@{/deletarNotificacao(id=${notif.id})}">Remover</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</body>
+  </body>
 </html>

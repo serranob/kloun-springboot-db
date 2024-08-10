@@ -1,18 +1,20 @@
 body {
-    background-color: #f5f5dc;
-    color: #ff0000;
+  background-color: #f5f5dc;
+  color: #ff0000;
 }
 
-h1, label, td, th {
-    color: #800000;
+h1,
+label,
+td,
+th {
+  color: #800000;
 }
 
-input[type="text"], input[type="date"] {
-    color: #800000;
+input[type="text"],
+input[type="date"] {
+  color: #800000;
 }
 
 .container {
-    padding: 20px;
+  padding: 20px;
 }
-
-
