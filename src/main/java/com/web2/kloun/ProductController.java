@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-
 
 
 @Controller
@@ -32,7 +29,7 @@ public class ProductController {
     public String shop(Model model){
         List<Product> productsList = productRepository.findAll();
         model.addAttribute("productsList", productsList);
-        return "shop.html";
+        return "/produto/shop";
     }
     
     
@@ -40,19 +37,19 @@ public class ProductController {
     public String listarProdutos(Model model){
         List<Product> productsList = productRepository.findAll();
         model.addAttribute("productsList", productsList);
-        return "dashboard.html";
+        return "produto/dashboard";
     }
 
     @GetMapping("/detalhesProduto")
     public String detalhesProduto (Model model, @RequestParam ("id") int id){
         Product findProduct = productRepository.findById(id);
         model.addAttribute("prod", findProduct);
-        return "ver_produto01.html";
+        return "produto/ver_produto01";
     }
 
     @GetMapping("/cadastrarProduto")
     public String cadastrarProduto(){
-        return "cadastrar_produto.html";
+        return "produto/cadastrar_produto";
     }
 
     @PostMapping("/armazenarProduto")
@@ -74,7 +71,7 @@ public class ProductController {
     public String atualizarProduto (Model model, @RequestParam int id){
         Product findProduct = productRepository.findById(id);
         model.addAttribute("prod", findProduct);
-        return "atualizar_produto.html";
+        return "/produto/atualizar_produto";
     }
 
     @PostMapping("/salvarAtualizacaoProduto")
@@ -104,7 +101,7 @@ public class ProductController {
     public String buscarProdutos(Model model, @RequestParam String nome) {
         List<Product> productsList = productRepository.findByName(nome);
         model.addAttribute("produtos", productsList);
-        return "buscar_produtos.html";
+        return "/produto/buscar_produtos.html";
     }
     
     

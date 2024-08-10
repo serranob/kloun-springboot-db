@@ -19,19 +19,19 @@ public class NotificationController {
     public String listarNotificacoes(Model model){
         List<Notification> notificacoesList = notificationRepository.findAll();
         model.addAttribute("notificacoesList", notificacoesList);
-        return "notificacoes.html";
+        return "/notificacao/notificacoes";
     }
 
     @GetMapping("/detalhesNotificacao")
     public String detalhesNotificacao (Model model, @RequestParam ("id") int id){
         Notification findNotification = notificationRepository.findById(id);
         model.addAttribute("notificacao", findNotification);
-        return "ver_notificacao.html";
+        return "/notificacao/ver_notificacao";
     }
 
     @GetMapping("/cadastrarNotificacao")
     public String cadastrarNotificacao(){
-        return "cadastrar_notificacao.html";
+        return "/notificacao/cadastrar_notificacao";
     }
 
     @PostMapping("/armazenarNotificacao")
@@ -49,7 +49,7 @@ public class NotificationController {
     public String atualizarNotificacao (Model model, @RequestParam int id){
         Notification findNotification = notificationRepository.findById(id);
         model.addAttribute("notificacao", findNotification);
-        return "atualizar_notificacao.html";
+        return "/notificacao/atualizar_notificacao.html";
     }
 
     @PostMapping("/salvarAtualizacaoNotificacao")
