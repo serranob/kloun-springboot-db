@@ -69,5 +69,4 @@ public class UserRepository {
         query.executeUpdate();
     }
 
-    
 }

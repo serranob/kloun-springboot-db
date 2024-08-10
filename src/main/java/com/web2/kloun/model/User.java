@@ -14,7 +14,6 @@ import jakarta.persistence.Table;
 @Table(name = "usuario")
 public class User extends Pessoa {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -29,7 +28,7 @@ public class User extends Pessoa {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "sobrenome") 
+    @Column(name = "sobrenome")
     private String sobrenome;
 
     @Column(name = "nascimento")
@@ -40,11 +39,10 @@ public class User extends Pessoa {
 
     @Column(name = "cpf")
     private String cpf;
-    
-    
-    public User(){}
-  
-        
+
+    public User() {
+    }
+
     public int getId() {
         return id;
     }
@@ -108,7 +106,6 @@ public class User extends Pessoa {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
 
     @Override
     public boolean isAdult() {

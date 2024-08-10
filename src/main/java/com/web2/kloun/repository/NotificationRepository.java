@@ -13,7 +13,7 @@ import jakarta.transaction.Transactional;
 
 @Repository
 public class NotificationRepository {
-        @PersistenceContext
+    @PersistenceContext
 
     public EntityManager em;
 
@@ -63,5 +63,4 @@ public class NotificationRepository {
         query.executeUpdate();
     }
 
-    
 }

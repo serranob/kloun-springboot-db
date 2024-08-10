@@ -11,8 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "produto")
-public class Product extends Item implements ProductValores{
-
+public class Product extends Item implements ProductValores {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,13 +27,14 @@ public class Product extends Item implements ProductValores{
     @Column(name = "preco")
     private double preco;
 
-    @Column(name = "categoria") 
+    @Column(name = "categoria")
     private String categoria;
 
     @Column(name = "imagem")
     private String imagem;
-    
-    public Product(){}
+
+    public Product() {
+    }
 
     public Product(int id, String nome, String descricao, double preco, String categoria, String imagem) {
         this.id = id;
@@ -84,7 +84,7 @@ public class Product extends Item implements ProductValores{
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
-    
+
     public String getImagem() {
         return imagem;
     }
@@ -99,19 +99,18 @@ public class Product extends Item implements ProductValores{
         return bd.doubleValue();
     }
 
-    public double aplicarDesconto (double percentualDesconto) {
+    public double aplicarDesconto(double percentualDesconto) {
         double desconto = preco * (percentualDesconto / 100.0);
         double precoComDesconto = getPreco() - desconto;
         return formatarValor(precoComDesconto);
     }
 
     public String calcularParcelas(int parcelas) {
-        double valorParcelado = (preco/parcelas);
+        double valorParcelado = (preco / parcelas);
         return "ou " + parcelas + "x de R$" + String.format("%.2f", valorParcelado);
     }
 
-
-     // Sobrecarga 1: Aplica aumento percentual no preço
+    // Sobrecarga 1: Aplica aumento percentual no preço
     public void aumentarPreco(double percentualAumento) {
         this.preco += this.preco * (percentualAumento / 100);
     }
@@ -124,6 +123,5 @@ public class Product extends Item implements ProductValores{
             aumentarPreco(valorAumento); // Usa o método de aumento percentual
         }
     }
-
 
 }

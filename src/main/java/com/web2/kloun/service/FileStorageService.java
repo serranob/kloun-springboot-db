@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class FileStorageService {
-    
+
     private final String fileBasePath = "./src/main/resources/static/public/";
     private final Path path;
 
@@ -21,7 +21,7 @@ public class FileStorageService {
 
         try {
             Files.createDirectories(this.path);
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             throw new RuntimeException("Could not create the directory where the uploaded files will be stored.", ex);
         }
     }
@@ -31,8 +31,8 @@ public class FileStorageService {
         try {
             Path targetLocation = this.path.resolve(fileName);
             Files.copy(file.getInputStream(), targetLocation);
-            
-        } catch(Exception ex) {
+
+        } catch (Exception ex) {
             throw new RuntimeException("Could not store file " + fileName + ". Please try again!", ex);
         }
         return fileName;
@@ -48,4 +48,3 @@ public class FileStorageService {
     }
 
 }
-

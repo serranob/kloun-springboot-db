@@ -14,7 +14,6 @@ import com.web2.kloun.service.FileStorageService;
 
 import org.springframework.web.bind.annotation.PostMapping;
 
-
 @Controller
 public class ProductController {
 
@@ -24,43 +23,42 @@ public class ProductController {
     @Autowired
     private FileStorageService fileStorageService;
 
-
     @GetMapping("/home")
-    public String home () {
+    public String home() {
         return "index.html";
     }
-    
+
     @GetMapping("/shop")
-    public String shop(Model model){
+    public String shop(Model model) {
         List<Product> productsList = productRepository.findAll();
         model.addAttribute("productsList", productsList);
         return "/produto/shop";
     }
-    
-    
+
     @GetMapping("/produtos")
-    public String listarProdutos(Model model){
+    public String listarProdutos(Model model) {
         List<Product> productsList = productRepository.findAll();
         model.addAttribute("productsList", productsList);
         return "produto/dashboard";
     }
 
     @GetMapping("/detalhesProduto")
-    public String detalhesProduto (Model model, @RequestParam ("id") int id){
+    public String detalhesProduto(Model model, @RequestParam("id") int id) {
         Product findProduct = productRepository.findById(id);
         model.addAttribute("prod", findProduct);
         return "produto/ver_produto01";
     }
 
     @GetMapping("/cadastrarProduto")
-    public String cadastrarProduto(){
+    public String cadastrarProduto() {
         return "produto/cadastrar_produto";
     }
 
     @PostMapping("/armazenarProduto")
-    public String armazenarProduto(Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam MultipartFile imagem) {
+    public String armazenarProduto(Model model, @RequestParam String nome, @RequestParam String descricao,
+            @RequestParam double preco, @RequestParam String categoria, @RequestParam MultipartFile imagem) {
         Product saveProduct = new Product();
-        if(!imagem.isEmpty()) {
+        if (!imagem.isEmpty()) {
             String imageName = fileStorageService.store(imagem);
             saveProduct.setImagem(imageName);
         }
@@ -73,16 +71,18 @@ public class ProductController {
     }
 
     @GetMapping("/atualizarProduto")
-    public String atualizarProduto (Model model, @RequestParam int id){
+    public String atualizarProduto(Model model, @RequestParam int id) {
         Product findProduct = productRepository.findById(id);
         model.addAttribute("prod", findProduct);
         return "/produto/atualizar_produto";
     }
 
     @PostMapping("/salvarAtualizacaoProduto")
-    public String salvarAtualizacaoProduto (Model model, @RequestParam String nome, @RequestParam String descricao, @RequestParam double preco, @RequestParam String categoria, @RequestParam MultipartFile imagem, @RequestParam int id){
+    public String salvarAtualizacaoProduto(Model model, @RequestParam String nome, @RequestParam String descricao,
+            @RequestParam double preco, @RequestParam String categoria, @RequestParam MultipartFile imagem,
+            @RequestParam int id) {
         Product updateProduct = new Product();
-        if(!imagem.isEmpty()) {
+        if (!imagem.isEmpty()) {
             String imageName = fileStorageService.store(imagem);
             updateProduct.setImagem(imageName);
         }
@@ -97,17 +97,16 @@ public class ProductController {
     }
 
     @GetMapping("/deletarProduto")
-    public String deletarProduto(@RequestParam ("id") int id) {
+    public String deletarProduto(@RequestParam("id") int id) {
         productRepository.delete(id);
         return "redirect:/produtos";
     }
-    
+
     @PostMapping("/buscarProdutos")
     public String buscarProdutos(Model model, @RequestParam String nome) {
         List<Product> productsList = productRepository.findByName(nome);
         model.addAttribute("produtos", productsList);
         return "/produto/buscar_produtos.html";
     }
-    
-    
+
 }

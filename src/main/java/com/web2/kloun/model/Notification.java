@@ -21,9 +21,9 @@ public class Notification {
     @Column(name = "tipo")
     private String tipo;
 
-    @Column(name = "prioridade") 
+    @Column(name = "prioridade")
     private String prioridade;
-    
+
     @Column(name = "criacao")
     private String criacao;
 
