@@ -146,7 +146,6 @@
                 <p class="titulo-produtos">Produtos cadastrados</p>
                 <div id="linha0" class="linha">
                     <p class="coluna-produto">produto</p>
-                    <p class="coluna-resto">estoque</p>
                     <p class="coluna-resto">preço</p>
                 </div>
                 <div id="linha1" class="linha" th:each="prod : ${productsList}">
@@ -158,7 +157,6 @@
                             <p class="produto-descricao" th:text="${prod.nome}"></p>
                         </div>
                     </div>
-                    <p class="coluna-resto">8</p>
                     <p class="coluna-resto" th:text="${prod.preco}"></p>
                     <button type="button" class="editar-deletar" ><a th:href="@{/detalhesProduto(id=${prod.id})}">ver detalhes</a></button>
                     <button type="button" class="editar-deletar"> <a th:href="@{/atualizarProduto(id=${prod.id})}">editar</a></button>

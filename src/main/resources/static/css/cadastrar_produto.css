@@ -48,7 +48,9 @@
 
 #conteudo-dashboard {
     display: flex;
-    background-color: rgb(198, 22, 27);
+    background-color: beige;
+    max-height: calc(100vh - 200px);
+    overflow: auto;
 }
 
 nav {
