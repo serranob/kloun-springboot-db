@@ -51,6 +51,8 @@
     background-color: rgb(198, 22, 27);
     padding-bottom: 50px;
     background-color: beige;
+    max-height: calc(100vh - 200px);
+    overflow: auto;
 }
 
 #produtos {

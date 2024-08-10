@@ -7,6 +7,7 @@ footer {
     height: 120px;
     padding-top: 25px;
     padding-bottom: 25px;
+    clear: both;
 }
 
 #esquerda-footer {
