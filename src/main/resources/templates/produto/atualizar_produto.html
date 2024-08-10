@@ -237,16 +237,6 @@
               />
             </div>
             <div class="item-cadastro">
-              <label for="descricao">Descrição</label>
-              <br />
-              <input
-                type="text"
-                id="descricao"
-                th:name="descricao"
-                th:value="${prod.nome}"
-              />
-            </div>
-            <div class="item-cadastro">
               <label for="preco">Preço</label>
               <br />
               <input
@@ -258,12 +248,12 @@
               />
             </div>
             <div class="item-cadastro">
-              <label for="ficha-tecnica">Ficha Técnica</label>
+              <label for="descricao">Descrição</label>
               <br />
               <textarea
                 rows="10"
                 id="ficha-tecnica"
-                th:name="ficha-tecnica"
+                th:name="descricao"
                 th:field="${prod.descricao}"
               ></textarea>
             </div>
@@ -273,7 +263,7 @@
               <select
                 id="selecione"
                 th:name="categoria"
-                th:value="${prod.nome}"
+                th:value="${prod.categoria}"
               >
                 <option value="">Selecione</option>
                 <option value="Camisetas">Camisetas</option>

@@ -74,7 +74,7 @@ public class ProductController {
     public String atualizarProduto(Model model, @RequestParam int id) {
         Product findProduct = productRepository.findById(id);
         model.addAttribute("prod", findProduct);
-        return "/produto/atualizar_produto";
+        return "produto/atualizar_produto";
     }
 
     @PostMapping("/salvarAtualizacaoProduto")
