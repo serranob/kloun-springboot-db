@@ -1,4 +1,4 @@
-package com.web2.kloun;
+package com.web2.kloun.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,6 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.web2.kloun.model.User;
+import com.web2.kloun.repository.UserRepository;
+
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -20,19 +24,19 @@ public class UserController {
     public String listarUsuarios(Model model){
         List<User> usersList = userRepository.findAll();
         model.addAttribute("usersList", usersList);
-        return "usuarios.html";
+        return "/usuario/usuarios";
     }
 
     @GetMapping("/detalhesUsuario")
     public String detalhesUsuario (Model model, @RequestParam ("id") int id){
         User findUser = userRepository.findById(id);
         model.addAttribute("user", findUser);
-        return "ver_usuario.html";
+        return "/usuario/ver_usuario";
     }
 
     @GetMapping("/cadastrarUsuario")
     public String cadastrarUsuario(){
-        return "login_cadastro.html";
+        return "/usuario/login_cadastro";
     }
 
     @PostMapping("/armazenarUsuario")
@@ -60,7 +64,7 @@ public class UserController {
     public String atualizarUsuario (Model model, @RequestParam int id){
         User findUser = userRepository.findById(id);
         model.addAttribute("user", findUser);
-        return "atualizar_usuario.html";
+        return "/usuario/atualizar_usuario";
     }
 
     @PostMapping("/salvarAtualizacaoUsuario")

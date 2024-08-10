@@ -1,4 +1,4 @@
-package com.web2.kloun;
+package com.web2.kloun.controller;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.web2.kloun.model.Notification;
+import com.web2.kloun.repository.NotificationRepository;
 
 @Controller
 public class NotificationController {

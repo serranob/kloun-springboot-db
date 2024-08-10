@@ -1,4 +1,4 @@
-package com.web2.kloun;
+package com.web2.kloun.model;
 
 import java.time.LocalDate;
 import java.time.Period;

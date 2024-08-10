@@ -1,8 +1,10 @@
-package com.web2.kloun;
+package com.web2.kloun.repository;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+
+import com.web2.kloun.model.Product;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
