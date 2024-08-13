@@ -176,11 +176,14 @@
                   ></a>
                 </h3>
                 <p
-                  class="price"
-                  data-update-price=""
-                  th:text="${prod.preco}"
+                  id="preco-produto"
+                  th:utext="'<s>' + 'R$ ' + ${prod.preco} + '</s>'"
                 ></p>
-                <p class="parcels">CALCULAR PARCELAS COM JAVA</p>
+                <p
+                  id="preco-produto"
+                  th:text="'R$ ' + ${prod.aplicarDesconto(10)} + ' à vista'"
+                ></p>
+                <p class="parcels" th:text="${prod.calcularParcelas(2)}"></p>
               </div>
             </div>
           </div>
